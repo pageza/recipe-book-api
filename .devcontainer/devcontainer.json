@@ -1,0 +1,43 @@
+{
+  "name": "Recipe Book API DevContainer",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {},
+      "extensions": [
+        "golang.Go",
+        "ms-azuretools.vscode-docker",
+        "saoudrizwan.claude-dev",
+        "GitHub.vscode-pull-request-github",
+        "golang.go",
+        "Postman.postman-for-vscode",
+        "cweijan.vscode-database-client2",
+        "oderwat.indent-rainbow",
+        "cweijan.vscode-postgresql-client2",
+        "esbenp.prettier-vscode",
+        "humao.rest-client",
+        "mtxr.sqltools",
+        "mtxr.sqltools-driver-pg",
+        "streetsidesoftware.code-spell-checker",
+        "redhat.vscode-yaml",
+        "rangav.vscode-thunder-client"
+      ]
+    }
+  },
+  "forwardPorts": [8080, 5432],
+  "postCreateCommand": "go mod tidy",
+  "remoteUser": "root",
+  "runArgs": ["--privileged"],
+  "overrideCommand": false,
+  "containerEnv": {
+  "DB_HOST": "localhost",
+  "DB_USER": "myuser",
+  "DB_PASSWORD": "mypassword",
+  "DB_NAME": "mydatabase",
+  "DB_PORT": "5432"
+}
+
+}
