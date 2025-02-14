@@ -31,3 +31,33 @@ type Recipe struct {
 	DeletedAt    gorm.DeletedAt `gorm:"index" json:"-"`
 	// Add additional fields as needed
 }
+
+// Ingredient represents an ingredient in a recipe
+type Ingredient struct {
+	ID        uint           `gorm:"primaryKey" json:"id"`
+	Name      string         `gorm:"not null" json:"name"`
+	Quantity  string         `json:"quantity"`
+	RecipeID  uint           `gorm:"not null" json:"recipe_id"`
+	CreatedAt time.Time      `json:"created_at"`
+	UpdatedAt time.Time      `json:"updated_at"`
+	DeletedAt gorm.DeletedAt `gorm:"index" json:"-"`
+}
+
+// SavedRecipe represents a user's saved recipe
+type SavedRecipe struct {
+	ID        uint           `gorm:"primaryKey" json:"id"`
+	UserID    uint           `gorm:"not null" json:"user_id"`
+	RecipeID  uint           `gorm:"not null" json:"recipe_id"`
+	CreatedAt time.Time      `json:"created_at"`
+	DeletedAt gorm.DeletedAt `gorm:"index" json:"-"`
+}
+
+// UserPreference represents a user's preferences
+type UserPreference struct {
+	ID         uint           `gorm:"primaryKey" json:"id"`
+	UserID     uint           `gorm:"not null" json:"user_id"`
+	Preference string         `gorm:"not null" json:"preference"`
+	CreatedAt  time.Time      `json:"created_at"`
+	UpdatedAt  time.Time      `json:"updated_at"`
+	DeletedAt  gorm.DeletedAt `gorm:"index" json:"-"`
+}

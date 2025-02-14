@@ -6,7 +6,6 @@ import (
 	"log"
 	"os"
 
-
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
@@ -32,7 +31,7 @@ func InitDB() {
 	log.Println("Database connection established")
 
 	// Automatically migrate your models
-	err = DB.AutoMigrate(&User{}, &Recipe{})
+	err = DB.AutoMigrate(&User{}, &Recipe{}, &Ingredient{}, &SavedRecipe{}, &UserPreference{})
 	if err != nil {
 		log.Fatalf("Failed to migrate database schemas: %v", err)
 	}
