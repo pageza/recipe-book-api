@@ -83,3 +83,6 @@ migrations/tmp/
 # Ignore test coverage files
 coverage.out
 *.coverprofile
+
+
+.bashrc
