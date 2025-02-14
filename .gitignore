@@ -1,0 +1,85 @@
+# Binaries & build artifacts
+/bin/
+/obj/
+/out/
+/tmp/
+*.exe
+*.dll
+*.so
+*.dylib
+*.test
+*.o
+*.a
+
+# Go-specific ignores
+*.log
+*.sum
+*.mod
+/go/pkg/
+/go/bin/
+/go/src/
+/vendor/
+
+# Ignore compiled Go binaries
+**/main
+**/*.exe
+**/*.out
+**/*.test
+
+# VS Code DevContainer (Include config, ignore temp files)
+!.devcontainer/
+.devcontainer/*.log
+.devcontainer/.DS_Store
+.devcontainer/.devcontainer.json.bak
+
+# Ignore dependencies
+node_modules/
+vendor/
+
+# Logs & temp files
+*.log
+*.pid
+*.seed
+*.old
+*.swp
+*.swo
+*.DS_Store
+
+# Ignore editor swap & temp files
+*.sublime-workspace
+*.sublime-project
+.idea/
+*.iml
+*.bak
+*.swp
+*.swo
+*.vim
+
+# Ignore environment files
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+.env.*.local
+
+# Docker-specific ignores
+.dockerignore
+docker-compose.override.yml
+docker-compose.yml
+/docker-volumes/
+
+# PostgreSQL database files (local storage, but NOT migrations)
+postgres-data/
+db-data/
+pgdata/
+
+# Migrations (Include source files, ignore compiled migrations)
+migrations/*.sql
+migrations/bin/
+migrations/logs/
+migrations/tmp/
+
+# Ignore test coverage files
+coverage.out
+*.coverprofile

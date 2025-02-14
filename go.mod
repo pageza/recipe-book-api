@@ -1,5 +1,10 @@
 module github.com/pageza/recipe-book-api
 
+go 1.21
+>>>>>> REPLACE
+```
+module github.com/pageza/recipe-book-api
+
 go 1.13
 
 require (
